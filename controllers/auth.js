@@ -33,7 +33,7 @@ exports.post_register = async function(req, res) {
         const message = "Hesabınızı başarılı şekilde oluşturuldu."
         const isSuccess = true;
        
-        return res.send([{message: message, isSuccess: isSuccess },newUser]);
+        return res.send({message: message, isSuccess: isSuccess });
     }
     catch(err) {
         console.log(err);

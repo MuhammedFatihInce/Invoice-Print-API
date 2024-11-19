@@ -7,6 +7,7 @@ const sequelize = new Sequelize(config.db.database, config.db.user, config.db.pa
     
     dialect: "mysql",
     host: config.db.host,
+    timezone: '+03:00',
     define: {
         freezeTableName: true,
     }

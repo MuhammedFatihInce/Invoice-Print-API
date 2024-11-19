@@ -2,13 +2,13 @@ const config = {
     db: {
         host: "localhost",
         user: "root",
-        password: "<your_password>",
-        database: "<your_database>"
+        password: "<Your_Password>",
+        database: "<Your_Database>"
     },
     email: {
-        username: "<your_mail>",
-        password: "<your_password>",
-        from: "<your_mail>",
+        username: "<Your_Mail>",
+        password: "<Your_Password>",
+        from: "<Your_Mail>",
     }
 }
 

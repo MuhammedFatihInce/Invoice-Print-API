@@ -77,7 +77,7 @@ exports.get_invoicePathByUserId = async function (req, res) {
   const UserId = req.params.userid;
   try {
     let invoices = await Invoices.findAll({
-      attributes: ["id", "userId", "invoicePath", "download"],
+      attributes: ["id", "userId", "invoicePath", "download", "updatedAt"],
       include: {
         model: Users, // Bu, User kayıtlarını Invoice kaydı olmasa bile getirecektir
         attributes: ["name"],
@@ -95,7 +95,8 @@ exports.get_invoicePathByUserId = async function (req, res) {
         userName = invoice.user;
         invoicePath = invoice.invoicePath;
         download = invoice.download;
-        return {invoiceId, UserId,userName,invoicePath,download};
+        updatedAt = invoice.updatedAt;
+        return {invoiceId, UserId, userName, invoicePath, download, updatedAt};
     })
 
     res.send(invoices);
@@ -135,3 +136,4 @@ exports.post_download = async function(req, res) {
       console.log(err);
   }
 }
+

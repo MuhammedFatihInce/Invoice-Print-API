@@ -45,7 +45,7 @@ class Invoice extends Model{}
 {
     sequelize,
     modelName: "invoices",
-    timestamps: false,
+    timestamps: true,
     paranoid: true  // Soft delete özelliği etkinleştirildi
 });
 

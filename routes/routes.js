@@ -5,6 +5,7 @@ const userController = require("../controllers/user");
 const invoiceController = require("../controllers/invoice");
 const authController = require("../controllers/auth");
 const printerController = require("../controllers/printer")
+const pdfController = require("../controllers/pdf")
 
 // Users
 router.get("/users/get/:id",userController.get_userById);
@@ -28,10 +29,14 @@ router.post("/auth/newpassword", authController.post_newpassword);
 
 
 // Printer
-router.post("/printer/post", printerController.post_printer);
-router.get("/printer/get", printerController.get_printer);
-router.post("/printer/updateStatus", printerController.post_updateStatus);
+router.post("/printer/post/:userid", printerController.post_printer);
+router.get("/printer/get/:userid", printerController.get_printer);
+router.post("/printer/updateStatus/:userid", printerController.post_updateStatus);
 
+
+//upload
+router.post("/fileUpload", pdfController.upload_pdf);
+router.post("/multipleFileUpload", pdfController.upload_multipleFile);
 
 
 module.exports = router;
